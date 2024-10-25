@@ -17,3 +17,7 @@ sudo vim /etc/nvidia-container-runtime/config.toml, then changed no-cgroups = fa
 
 Restart docker daemon: sudo systemctl restart docker, then you can test by running sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi 
 ```
+```
+find /usr -name libGL.so
+find / -iname "*nvid*" ! -path "/var/lib/*" ! -path "/var/cache/*" ! -path "/usr/lib/*" ! -path "/usr/src/*" ! -path "/usr/share/*" ! -path "/usr/bin"
+```
